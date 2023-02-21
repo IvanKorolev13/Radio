@@ -27,25 +27,24 @@ public class Radio {
     }
 
     public void nextRadioStation() {
-        if (currentRadioStation < 9) {
-            currentRadioStation++;
-            return;
-        }
-        if (currentRadioStation == 9) {
+        /*if (currentRadioStation >= 9) {
             currentRadioStation = 0;
-        }
+        } else{
+            currentRadioStation ++;
+        }*/
+        if (currentRadioStation >= 9)
+            currentRadioStation = 0;
+        else currentRadioStation ++;
     }
 
     public void prevRadioStation() {
-        if (currentRadioStation > 0) {
-            currentRadioStation--;
-            return;
-        }
-        if (currentRadioStation == 0) {
+        /*if (currentRadioStation <= 0) {
             currentRadioStation = 9;
-        }
+        }else{
+            currentRadioStation --;
+        }*/
+        currentRadioStation = currentRadioStation <= 0 ? 9 : currentRadioStation - 1;
     }
-
 
     public void increaseVolume() {
         if (currentVolume < 10) {
