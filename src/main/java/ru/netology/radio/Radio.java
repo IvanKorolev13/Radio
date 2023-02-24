@@ -4,7 +4,7 @@ public class Radio {
     private int maxRadioStation = 9;
     private int minRadioStation = 0;
     private int currentRadioStation = minRadioStation;
-    private int maxVolume = 100;
+    private int maxVolume = 10;
     private int minVolume = 0;
     private int currentVolume = minVolume;
 
@@ -41,7 +41,13 @@ public class Radio {
     }
 
     public void setCurrentVolume(int levelVolume) {
-        currentVolume = levelVolume;
+        if (levelVolume < minVolume) {
+            currentVolume = minVolume;
+        } else if (levelVolume > maxVolume) {
+            currentVolume = maxVolume;
+        } else {
+            currentVolume = levelVolume;
+        }
     }
 
     public int getCurrentVolume() {

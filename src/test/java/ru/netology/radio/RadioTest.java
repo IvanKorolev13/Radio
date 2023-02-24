@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioTest {
     Radio inputStation = new Radio(30);
     Radio inputVolume = new Radio(0, 100);
+
     //тесты на ввод значений радиостанции
     // граничные значений (-1, 0, 1, 8, 9, 10)- новые значения (-1, 0, 1, 28, 29, 30)
     @Test
